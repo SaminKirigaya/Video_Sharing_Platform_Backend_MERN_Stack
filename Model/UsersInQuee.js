@@ -54,6 +54,6 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-const VerifiedUsers = mongoose.model('VerifiedUsers', userSchema);
+const UsersInQuee = mongoose.model('UsersInQuee', userSchema);
 
-module.exports = VerifiedUsers;
+module.exports = UsersInQuee;

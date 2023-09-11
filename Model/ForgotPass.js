@@ -2,19 +2,19 @@ const DB = require('./DB')
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
-    token : {
+    email : {
         type : String,
         required : true,
         unique : true,
     },
-    username : {
+    password : {
         type : String,
         required : true,
         trim : true,
-        unique : true,
+       
     }
 })
 
-const TokenDatabase = mongoose.model('TokenDatabase', userSchema);
+const ForgotPass = mongoose.model('ForgotPass', userSchema);
 
-module.exports = TokenDatabase;
+module.exports = ForgotPass;
