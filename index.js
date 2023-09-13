@@ -17,8 +17,8 @@ app.use(morgan('tiny')) // setting morgan to see any error in console
 app.use(express.json()) // to get form data or any post json data
 
 // setting static folders so we can set links :
-app.use('/public/profileimages',express.static(__dirname + '/public/profileimages'))
-app.use('/public/coverimages',express.static(__dirname + '/public/coverimages'))
+
+app.use('/public/images',express.static(__dirname + '/public/images'))
 app.use('/public/videos',express.static(__dirname + '/public/videos'))
 
 
