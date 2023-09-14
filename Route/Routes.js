@@ -8,7 +8,7 @@ const upload = require('../Middleware/Multer')
 const SignUp = require('../Route Function/SignUp')
 const VerifyOtp = require('../Route Function/VerifyOtp')
 const LogMeIn = require('../Route Function/LogMeIn')
-
+const ForgotPassword = require('../Route Function/ForgotPassword')
 
 // main rest Api's
 
@@ -28,5 +28,9 @@ Routes.post('/logMeIn',
 LogMeIn 
 )
 
+
+Routes.post('/fortgotPassword', 
+ForgotPassword 
+)
 
 module.exports = Routes

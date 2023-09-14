@@ -9,7 +9,7 @@ async function LogMeIn(req, res, next){
     try{
         const {Email, Password} = req.body
 
-        const isVerified = await VerifiedUsers.findOne({email : Email}).lean()
+        const isVerified = await VerifiedUsers.findOne({email : Email})
 
         if(isVerified){
 
