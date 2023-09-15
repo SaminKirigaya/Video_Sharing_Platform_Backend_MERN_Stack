@@ -17,6 +17,8 @@ const SetProfileDataNoImg = require('../Route Function/SetProfileDataNoImg')
 const SetProfileDataBothImg = require('../Route Function/SetProfileDataBothImg')
 const SetProfileDataProfImg = require('../Route Function/SetProfileDataProfImg')
 const  SetProfileDataCoverImg = require('../Route Function/SetProfileDataCoverImg')
+const SetNewPass = require('../Route Function/SetNewPass')
+const DeleteId = require('../Route Function/DeleteId')
 
 // main rest Api's
 
@@ -88,6 +90,16 @@ SetProfileDataCoverImg
 )
 
 
+Routes.post('/setNewPassword/:usersl',  // setting new pass in id and checking if old pass provided is same
+Authenticate, 
+SetNewPass 
+)
+
+
+Routes.get('/deleteThisId/:usersl',  // deleting total account
+Authenticate, 
+DeleteId 
+)
 
 
 
