@@ -1,6 +1,6 @@
 const Multer = require('multer')
 
-const storage = Multer.diskStorage({
+const storage3 = Multer.diskStorage({
     destination : (req, file, cb)=>{
         cb(null, 'public/videos')
     },
@@ -9,6 +9,6 @@ const storage = Multer.diskStorage({
     }
 })
 
-const Video = Multer({storage})
+const Video = Multer({storage : storage3})
 
 module.exports = Video

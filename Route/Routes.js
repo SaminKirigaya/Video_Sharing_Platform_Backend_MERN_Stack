@@ -2,6 +2,9 @@ require('dotenv').config()
 const express = require('express')
 const Routes = express.Router()
 const upload = require('../Middleware/Multer')
+const Video  = require('../Middleware/Video')
+
+
 
 // Middleware 
 const Authenticate = require('../Middleware/Authenticate')
@@ -105,6 +108,10 @@ DeleteId
 
 Routes.post('/uploadmyfile/:usersl', 
 Authenticate, 
+Video.fields([
+    { name : 'Video', maxCount : 1},
+    { name : 'Thumbnail', maxCount : 1},        
+]),
 UploadTheFile 
 )
 
