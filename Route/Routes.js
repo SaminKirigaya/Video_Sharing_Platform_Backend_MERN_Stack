@@ -19,6 +19,7 @@ const SetProfileDataProfImg = require('../Route Function/SetProfileDataProfImg')
 const  SetProfileDataCoverImg = require('../Route Function/SetProfileDataCoverImg')
 const SetNewPass = require('../Route Function/SetNewPass')
 const DeleteId = require('../Route Function/DeleteId')
+const UploadTheFile = require('../Route Function/UploadTheFile')
 
 // main rest Api's
 
@@ -101,6 +102,11 @@ Authenticate,
 DeleteId 
 )
 
+
+Routes.post('/uploadmyfile/:usersl', 
+Authenticate, 
+UploadTheFile 
+)
 
 
 
