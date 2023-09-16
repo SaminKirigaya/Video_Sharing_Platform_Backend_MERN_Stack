@@ -20,6 +20,7 @@ app.use(express.json()) // to get form data or any post json data
 
 app.use('/public/images',express.static(__dirname + '/public/images'))
 app.use('/public/videos',express.static(__dirname + '/public/videos'))
+app.use('/public/thumbnails',express.static(__dirname + '/public/thumbnails'))
 
 
 // set rout handle middleware 

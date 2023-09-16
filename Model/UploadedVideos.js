@@ -35,6 +35,12 @@ const userSchema = new mongoose.Schema({
     }
 })
 
+userSchema.index({
+    title : 'text',
+    description : 'text',
+    tags : 'text',
+})
+
 const UploadedVideos = mongoose.model('UploadedVideos', userSchema);
 
 module.exports = UploadedVideos;
