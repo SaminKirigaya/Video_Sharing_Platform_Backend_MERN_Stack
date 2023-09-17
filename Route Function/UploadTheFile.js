@@ -21,12 +21,37 @@ async function UploadTheFile(req, res, next){
         const video = req.files['Video'][0].filename
         const thumbnail = req.files['Thumbnail'][0].filename
 
+        const globalVideo = process.env.IMG+'/public/videos/'+video 
+        const globalThumbnail = process.env.IMG+'/public/videos/'+thumbnail
 
         var title = req.body.Title
         var description = req.body.Description
         var tags = req.body.Tags
 
-        console.log(tags, title, description)
+
+        
+        const charactersToReplace = ['<', '>', '/', ';'];
+        const replacementCharacters = ['&lt;', '&gt;', '&#47;', '&#59;'];
+      
+        for (let i = 0; i < charactersToReplace.length; i++) {
+            const regex = new RegExp(charactersToReplace[i], 'g');
+            title = title.replace(regex, replacementCharacters[i]);
+            description = description.replace(regex, replacementCharacters[i]);
+            tags = tags.replace(regex, replacementCharacters[i]);
+        }
+
+        const saveData = new UploadedVideos({
+            userSerial : usersl,
+            title : title,
+            description : description,
+            tags : tags,
+            videoLink : globalVideo,
+            thumbnailLink : globalThumbnail,
+        })
+
+
+        await saveData.save()
+
         return res.status(200).json({
             message : 'Your file was successfully uploaded ...'
         })
