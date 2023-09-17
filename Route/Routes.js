@@ -23,6 +23,8 @@ const  SetProfileDataCoverImg = require('../Route Function/SetProfileDataCoverIm
 const SetNewPass = require('../Route Function/SetNewPass')
 const DeleteId = require('../Route Function/DeleteId')
 const UploadTheFile = require('../Route Function/UploadTheFile')
+const ShowOldVideos = require('../Route Function/ShowOldVideos')
+const AddThisToWatchList = require('../Route Function/AddThisToWatchList')
 
 // main rest Api's
 
@@ -106,13 +108,25 @@ DeleteId
 )
 
 
-Routes.post('/uploadmyfile/:usersl', 
+Routes.post('/uploadmyfile/:usersl',  // uploading videos
 Authenticate, 
 Video.fields([
     { name : 'Video', maxCount : 1},
     { name : 'Thumbnail', maxCount : 1},        
 ]),
 UploadTheFile 
+)
+
+
+Routes.get('/getOldUploadedVideos/:usersl',  // api to call old uploaded vids
+Authenticate, 
+ShowOldVideos 
+)
+
+
+Routes.post('/addThisToWatchList/:usersl', 
+Authenticate, 
+AddThisToWatchList 
 )
 
 
