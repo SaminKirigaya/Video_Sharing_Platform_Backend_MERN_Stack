@@ -47,6 +47,9 @@ async function UploadTheFile(req, res, next){
             tags : tags,
             videoLink : globalVideo,
             thumbnailLink : globalThumbnail,
+            likeamount : 0,
+            dislikedamount: 0,
+            totalviews : 0,
         })
 
 

@@ -32,6 +32,18 @@ const userSchema = new mongoose.Schema({
     uploadingDate : {
         type : Date,
         default : Date.now,
+    },
+    likeamount: {
+        type : Number,
+        required : true,
+    },
+    dislikedamount : {
+        type : Number,
+        required : true,
+    },
+    totalviews:{
+        type : Number,
+        required : true,
     }
 })
 
