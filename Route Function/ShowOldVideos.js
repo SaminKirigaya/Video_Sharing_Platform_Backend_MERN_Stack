@@ -7,7 +7,7 @@ async function ShowOldVideos(req, res,next){
             userSerial : usersl 
         }).sort({uploadingDate : -1})
 
-        console.log(oldVideosData)
+       
         if(oldVideosData){
             return res.status(200).json({
                 message : 'success',

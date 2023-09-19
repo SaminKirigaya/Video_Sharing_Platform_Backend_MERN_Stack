@@ -25,6 +25,11 @@ const DeleteId = require('../Route Function/DeleteId')
 const UploadTheFile = require('../Route Function/UploadTheFile')
 const ShowOldVideos = require('../Route Function/ShowOldVideos')
 const AddThisToWatchList = require('../Route Function/AddThisToWatchList')
+const GetThisVideoDataOfMy = require('../Route Function/GetThisVideoDataOfMy')
+const DeleteThisVideo = require('../Route Function/DeleteThisVideo')
+const SetNewDetailsInVideo = require('../Route Function/SetNewDetailsInVideo')
+const GettingHomePageVideos = require('../Route Function/GettingHomePageVideos')
+
 
 // main rest Api's
 
@@ -124,11 +129,32 @@ ShowOldVideos
 )
 
 
-Routes.post('/addThisToWatchList/:usersl', 
-Authenticate, 
+Routes.post('/addThisToWatchList/:usersl',  // adding to watchlist
+Authenticate,  
 AddThisToWatchList 
 )
 
+Routes.post('/getThisVideoData/:usersl',  // getting personal specific video data
+Authenticate, 
+GetThisVideoDataOfMy 
+)
+
+ 
+Routes.post('/deleteThisVideo/:usersl',  // delete user specific video
+Authenticate, 
+DeleteThisVideo 
+)
+
+
+Routes.post('/setNewDetails/:usersl', // setting old videos title tag and desc change
+Authenticate, 
+SetNewDetailsInVideo 
+)
+
+
+Routes.get('/getOldUploadedVideosHome', //home page videos api
+GettingHomePageVideos 
+)
 
 
 module.exports = Routes // exporting routs
