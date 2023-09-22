@@ -29,6 +29,9 @@ const GetThisVideoDataOfMy = require('../Route Function/GetThisVideoDataOfMy')
 const DeleteThisVideo = require('../Route Function/DeleteThisVideo')
 const SetNewDetailsInVideo = require('../Route Function/SetNewDetailsInVideo')
 const GettingHomePageVideos = require('../Route Function/GettingHomePageVideos')
+const DataMainVideoPage = require('../Route Function/DataMainVideoPage')
+
+
 
 
 // main rest Api's
@@ -155,6 +158,12 @@ SetNewDetailsInVideo
 Routes.get('/getOldUploadedVideosHome', //home page videos api
 GettingHomePageVideos 
 )
+
+
+Routes.post('/getThisVideoDataMainVideoSeeingPage', // main page video data grabbing
+DataMainVideoPage
+)
+
 
 
 module.exports = Routes // exporting routs
