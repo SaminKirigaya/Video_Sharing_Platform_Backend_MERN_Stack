@@ -26,6 +26,7 @@ async function DeleteThisVideo(req, res, next){
             await UploadedVideos.findByIdAndDelete(videoSlNo) // deleting video from upload database
             await WatchList.findOneAndDelete({videoId : videoSlNo}) //anyone who addded it in their watchlist will no longer find it
 
+            
             return res.status(200).json({
                 message : 'success',
             })

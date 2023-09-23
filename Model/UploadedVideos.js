@@ -48,9 +48,10 @@ const userSchema = new mongoose.Schema({
 })
 
 userSchema.index({
-    title : 'text',
-    description : 'text',
     tags : 'text',
+    description : 'text',
+    title : 'text',
+    
 })
 
 const UploadedVideos = mongoose.model('UploadedVideos', userSchema);
