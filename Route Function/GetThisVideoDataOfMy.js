@@ -16,7 +16,7 @@ async function GetThisVideoDataOfMy(req, res, next){
                 videouploadtime : findingVideo.uploadingDate,
                 videotitle : findingVideo.title,
                 videodescription: findingVideo.description,
-
+                totalViews : findingVideo.totalviews,
             })
         }else{
             return res.status(200).json({

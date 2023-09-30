@@ -30,8 +30,16 @@ const DeleteThisVideo = require('../Route Function/DeleteThisVideo')
 const SetNewDetailsInVideo = require('../Route Function/SetNewDetailsInVideo')
 const GettingHomePageVideos = require('../Route Function/GettingHomePageVideos')
 const DataMainVideoPage = require('../Route Function/DataMainVideoPage')
-
-
+const GiveLoveReact = require('../Route Function/GiveLoveReact')
+const GiveDisLoveReact = require('../Route Function/GiveDisLoveReact')
+const ReportThisVideo = require('../Route Function/ReportThisVideo')
+const AddNewComment = require('../Route Function/AddNewComment')
+const GetAllComments = require('../Route Function/GetAllComments')
+const AddReplayToComment = require('../Route Function/AddReplayToComment')
+const GivingLoveToAComment = require('../Route Function/GivingLoveToAComment')
+const GivingDisloveToAComment = require('../Route Function/GivingDisloveToAComment')
+const GivingLoveToReplay = require('../Route Function/GivingLoveToReplay')
+const GivingDisloveToReplay = require('../Route Function/GivingDisloveToReplay')
 
 
 // main rest Api's
@@ -165,5 +173,61 @@ DataMainVideoPage
 )
 
 
+Routes.post('/likeThisVideo/:usersl',// giving love reeact in server whole all user page
+Authenticate, 
+GiveLoveReact 
+)
+
+
+Routes.post('/dislikeThisVideo/:usersl',// giving dis love reeact in server whole all user page
+Authenticate, 
+GiveDisLoveReact 
+)
+
+
+Routes.post('/reportThisVideo/:usersl', // Reporting a video
+Authenticate, 
+ReportThisVideo 
+)
+
+
+Routes.post('/sendThisComment/:usersl', // sending a comment
+Authenticate, 
+AddNewComment 
+)
+
+
+Routes.post('/getThisVideoComsMainPage',  // giving all comments related to a video in main page
+GetAllComments 
+)
+
+
+Routes.post('/sendThisCommentReplay/:usersl',  // send a specific comment a reply
+Authenticate, 
+AddReplayToComment
+)
+
+
+Routes.post('/sendThisCommentLove/:usersl', // giving love to a comment
+Authenticate, 
+GivingLoveToAComment 
+)
+
+
+Routes.post('/sendThisCommentADislove/:usersl',  // sending hate to a comment 
+Authenticate, 
+GivingDisloveToAComment 
+)
+
+
+Routes.post('/sendThisCommentReplayLove/:usersl', // sending love to a replay
+Authenticate, 
+GivingLoveToReplay 
+)
+
+Routes.post('/sendThisCommentReplayDislove/:usersl', 
+Authenticate, 
+GivingDisloveToReplay 
+)
 
 module.exports = Routes // exporting routs

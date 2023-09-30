@@ -1,59 +1,50 @@
+
 const DB = require('./DB')
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
-    email : {
-        type : String,
-        required : true,
-        unique : true,
-        trim : true,
-    },
-    username : {
-        type : String,
-        required : true,
-        trim : true,
-        unique : true,
-    },
-    fullName : {
-        type : String,
-        required : true,
-        trim : true,
-    },
-    password : {
-        type : String,
-        trim : true,
-        required : true,
-    },
-    profileImage : {
+    videoSerial : {
         type : String,
         required : true,
     },
-    coverImage : {
+    commentSerial : {
         type : String,
         required : true,
     },
-    gender : {
+    whoGivingSerial : {
         type : String,
         required : true,
     },
-    country : {
+    whoseCommentSerial : {
         type : String,
         required : true,
     },
-    address : {
+    whoGivingImage : {
         type : String,
         required : true,
     },
-    dateOfBirth : {
-        type : Date,
+    whoGivingUsername : {
+        type : String,
         required : true,
     },
-    joinedDate : {
+    replay : {
+        type: String,
+        required: true
+    },
+    replayLove: {
+        type: Number, 
+        required : true,
+    },
+    replayDislove: {
+        type: Number, 
+        required : true,
+    },
+    replayingTime : {
         type : Date,
         default : Date.now,
     }
 })
 
-const VerifiedUsers = mongoose.model('VerifiedUsers', userSchema);
+const CommentReplay = mongoose.model('CommentReplay', userSchema);
 
-module.exports = VerifiedUsers;
+module.exports = CommentReplay

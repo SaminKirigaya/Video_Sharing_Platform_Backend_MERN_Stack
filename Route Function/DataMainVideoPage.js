@@ -97,6 +97,7 @@ async function DataMainVideoPage(req, res, next){
                     videousername : findingVideo.userName,
                     videouserimage : findingVideo.userImage,
                     videotags : findingVideo.tags,
+                    totalViews: findingVideo.totalviews,
                     sameTypeVids : filterIt,
                 })
 
@@ -175,6 +176,7 @@ async function DataMainVideoPage(req, res, next){
                     videousername : findingVideo.userName,
                     videouserimage : findingVideo.userImage,
                     videotags : findingVideo.tags,
+                    totalViews : findingVideo.totalviews,
                     sameTypeVids : filterIt,
                 })
             }
