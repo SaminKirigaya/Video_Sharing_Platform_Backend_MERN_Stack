@@ -42,6 +42,8 @@ const GivingLoveToReplay = require('../Route Function/GivingLoveToReplay')
 const GivingDisloveToReplay = require('../Route Function/GivingDisloveToReplay')
 const DeleteThisCommentInMyVid = require('../Route Function/DeleteThisCommentInMyVid')
 const DeleteThisReplayInMyVid = require('../Route Function/DeleteThisReplayInMyVid')
+const SendSearchBasedVids = require('../Route Function/SendSearchBasedVids')
+
 
 // main rest Api's
 
@@ -239,6 +241,11 @@ DeleteThisCommentInMyVid
 Routes.post('/deleteThisReplay/:usersl',  // deleting a replay in personal video
 Authenticate, 
 DeleteThisReplayInMyVid 
+)
+
+
+Routes.post('/searchedVideos', 
+SendSearchBasedVids 
 )
 
 module.exports = Routes // exporting routs
