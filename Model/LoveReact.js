@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
     whoGivingUsername : {
         type : String,
         required : true,
+    },
+    added : {
+        type : Date,
+        default : Date.now,
     }
     
 })

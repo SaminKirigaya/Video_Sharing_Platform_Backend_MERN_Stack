@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
     videoId : {
         type : String,
         required : true,
+    },
+    added:{
+        type : Date,
+        default : Date.now,
     }
 })
 

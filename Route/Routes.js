@@ -43,6 +43,8 @@ const GivingDisloveToReplay = require('../Route Function/GivingDisloveToReplay')
 const DeleteThisCommentInMyVid = require('../Route Function/DeleteThisCommentInMyVid')
 const DeleteThisReplayInMyVid = require('../Route Function/DeleteThisReplayInMyVid')
 const SendSearchBasedVids = require('../Route Function/SendSearchBasedVids')
+const GiveVideoesForWatchlist = require('../Route Function/GiveVideoesForWatchlist')
+const GiveMyLovedVidsData = require('../Route Function/GiveMyLovedVidsData')
 
 
 // main rest Api's
@@ -244,8 +246,20 @@ DeleteThisReplayInMyVid
 )
 
 
-Routes.post('/searchedVideos', 
+Routes.post('/searchedVideos', // searched video sending
 SendSearchBasedVids 
+)
+
+
+
+Routes.post('/watchLater/:usersl',  // watchlist video sending
+Authenticate, 
+GiveVideoesForWatchlist 
+)
+
+Routes.post('/likedVideos/:usersl', // send which videos the user love reacted
+Authenticate, 
+GiveMyLovedVidsData 
 )
 
 module.exports = Routes // exporting routs
