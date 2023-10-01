@@ -28,6 +28,7 @@ async function GivingDisloveToReplay(req, res, next){
         const newAddDislove = new ReplayDislove({
             videoSerial : videoSl,
             replaySerial: replayid,
+            commentSerial: uploadedReplay.commentSerial,
             whoGivingSerial : usersl,
             whoseReplaySerial : uploadedReplay.whoGivingSerial,
             whoGivingUsername: whoSendingData.username,
@@ -50,6 +51,7 @@ async function GivingDisloveToReplay(req, res, next){
         const insertNotif = new ReplayNotification({
             videoSerial : videoSl,
             replaySerial: replayid,
+            commentSerial: uploadedReplay.commentSerial,
             whoGivingSerial : usersl,
             whoGivingUsername : whoSendingData.username,
             whoseReplaySerial : uploadedReplay.whoGivingSerial,
@@ -69,6 +71,7 @@ async function GivingDisloveToReplay(req, res, next){
         const newAddDislove = new ReplayDislove({
             videoSerial : videoSl,
             replaySerial: replayid,
+            commentSerial: uploadedReplay.commentSerial,
             whoGivingSerial : usersl,
             whoseReplaySerial : uploadedReplay.whoGivingSerial,
             whoGivingUsername: whoSendingData.username,
@@ -89,6 +92,7 @@ async function GivingDisloveToReplay(req, res, next){
         const insertNotif = new ReplayNotification({
             videoSerial : videoSl,
             replaySerial: replayid,
+            commentSerial: uploadedReplay.commentSerial,
             whoGivingSerial : usersl,
             whoGivingUsername : whoSendingData.username,
             whoseReplaySerial : uploadedReplay.whoGivingSerial,

@@ -40,7 +40,8 @@ const GivingLoveToAComment = require('../Route Function/GivingLoveToAComment')
 const GivingDisloveToAComment = require('../Route Function/GivingDisloveToAComment')
 const GivingLoveToReplay = require('../Route Function/GivingLoveToReplay')
 const GivingDisloveToReplay = require('../Route Function/GivingDisloveToReplay')
-
+const DeleteThisCommentInMyVid = require('../Route Function/DeleteThisCommentInMyVid')
+const DeleteThisReplayInMyVid = require('../Route Function/DeleteThisReplayInMyVid')
 
 // main rest Api's
 
@@ -225,9 +226,19 @@ Authenticate,
 GivingLoveToReplay 
 )
 
-Routes.post('/sendThisCommentReplayDislove/:usersl', 
+Routes.post('/sendThisCommentReplayDislove/:usersl',  // sending a comments replay hate
 Authenticate, 
 GivingDisloveToReplay 
+)
+
+Routes.post('/deleteThisComment/:usersl', // deleting a comment in a user video who posted can only delete it 
+Authenticate, 
+DeleteThisCommentInMyVid 
+)
+
+Routes.post('/deleteThisReplay/:usersl',  // deleting a replay in personal video
+Authenticate, 
+DeleteThisReplayInMyVid 
 )
 
 module.exports = Routes // exporting routs

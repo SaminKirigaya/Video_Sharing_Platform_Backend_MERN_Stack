@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true,
     }, 
+    commentSerial : {
+        type : String,
+        required : true,
+    },
     whoGivingSerial : {
         type : String,
         required : true,
