@@ -54,6 +54,12 @@ const userSchema = new mongoose.Schema({
     }
 })
 
+userSchema.index({
+    username : 'text',
+    fullName : 'text',
+    email : 'text',
+})
+
 const VerifiedUsers = mongoose.model('VerifiedUsers', userSchema);
 
 module.exports = VerifiedUsers;
