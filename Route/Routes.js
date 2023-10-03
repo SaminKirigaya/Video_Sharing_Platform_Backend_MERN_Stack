@@ -46,6 +46,9 @@ const SendSearchBasedVids = require('../Route Function/SendSearchBasedVids')
 const GiveVideoesForWatchlist = require('../Route Function/GiveVideoesForWatchlist')
 const GiveMyLovedVidsData = require('../Route Function/GiveMyLovedVidsData')
 const SearchDataOfAUsername = require('../Route Function/SearchDataOfAUsername')
+const GetAllNotifications = require('../Route Function/GetAllNotifications')
+const ClearOldNotify = require('../Route Function/ClearOldNotify')
+
 
 
 // main rest Api's
@@ -268,5 +271,18 @@ Routes.post('/searchedVideosOfUsername', // search data based on a username
 Authenticate, 
 SearchDataOfAUsername 
 )
+
+
+Routes.post('/getNotificationData/:usersl', // getting all notifications
+Authenticate, 
+GetAllNotifications 
+)
+
+
+Routes.post('/clearNotificationData/:usersl', // clearing all old notifs
+Authenticate, 
+ClearOldNotify 
+)
+
 
 module.exports = Routes // exporting routs

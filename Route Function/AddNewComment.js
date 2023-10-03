@@ -38,7 +38,7 @@ async function AddNewComment(req, res, next){
                 whoGivingUsername : userData.username,
                 whosePostSerial: videoExist.userSerial,
                 whoGivingImage : userData.profileImage,
-                reason : 'commented Your Video .... ',
+                reason : 'commented In Your Video .... ',
             })
     
             await insertNotif.save()
