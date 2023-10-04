@@ -41,7 +41,7 @@ async function GetAllNotifications(req, res, next){
         }
 
         
-        console.log(arrayConverted)
+        
         
 
 

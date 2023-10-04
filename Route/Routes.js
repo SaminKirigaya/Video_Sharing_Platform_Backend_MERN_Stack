@@ -48,6 +48,7 @@ const GiveMyLovedVidsData = require('../Route Function/GiveMyLovedVidsData')
 const SearchDataOfAUsername = require('../Route Function/SearchDataOfAUsername')
 const GetAllNotifications = require('../Route Function/GetAllNotifications')
 const ClearOldNotify = require('../Route Function/ClearOldNotify')
+const GetNewNotificationAmount = require('../Route Function/GetNewNotificationAmount')
 
 
 
@@ -282,6 +283,12 @@ GetAllNotifications
 Routes.post('/clearNotificationData/:usersl', // clearing all old notifs
 Authenticate, 
 ClearOldNotify 
+)
+
+
+Routes.get('/getNewNotificationNumber/:usersl', 
+Authenticate, 
+GetNewNotificationAmount 
 )
 
 

@@ -29,7 +29,7 @@ async function GetAllComments(req, res, next){
                         
                 }
            
-                console.log(isCommentThere)
+                
 
             return res.status(200).json({
                 message : 'success',
