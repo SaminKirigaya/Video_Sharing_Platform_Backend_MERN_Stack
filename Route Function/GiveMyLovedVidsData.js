@@ -36,7 +36,7 @@ async function GiveMyLovedVidsData(req, res, next){
             })
         }
 
-        if(videoIds.length>1){
+        if(videoIds.length>0 && videoIds){
             
             for(let i=videoIds.length-1; i>=0; i--){
                 finalIds.push(videoIds[i])

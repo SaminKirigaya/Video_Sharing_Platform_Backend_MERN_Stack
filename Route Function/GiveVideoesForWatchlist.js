@@ -31,12 +31,16 @@ async function GiveVideoesForWatchlist(req, res, next){
                 
             }
         }else if (!getWatchList){
+            
             return res.status(200).json({
                 message : 'Seems like there are no bookmarked videos in the server for you ...'
             })
+            
+
+            
         }
 
-        if(videoIds.length>1){
+        if(videoIds.length>0 && videoIds){
             
             for(let i=videoIds.length-1; i>=0; i--){
                 finalIds.push(videoIds[i])
